@@ -4,11 +4,11 @@ export const newProductApi = apiSlice.injectEndpoints({
   overrideExisting: true,
   endpoints: (builder) => ({
     getAllNewProducts: builder.query({
-      query: () => `https://adorable-gentleness-production.up.railway.app/api/newproduct/view`,
+      query: () => `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/newproduct/view`,
       providesTags: ['NewProducts']
     }),
     getNewProduct: builder.query({
-      query: (id) => `https://adorable-gentleness-production.up.railway.app/api/newproduct/view/${id}`,
+      query: (id) => `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/newproduct/view/${id}`,
       providesTags: (result, error, id) => [{ type: "NewProducts", id }],
     }),
     addNewProduct: builder.mutation({
@@ -92,7 +92,7 @@ export const newProductApi = apiSlice.injectEndpoints({
       query: (id) => `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/groupcode/view/${id}`,
     }),
     getPopularNewProducts: builder.query({
-      query: () => `https://adorable-gentleness-production.up.railway.app/api/newproduct/popular`,
+      query: () => `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/newproduct/popular`,
       providesTags: ["PopularNewProducts"],
     }),
     getOfferNewProducts: builder.query({
