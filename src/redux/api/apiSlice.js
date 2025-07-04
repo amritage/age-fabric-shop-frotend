@@ -5,7 +5,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const apiSlice = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({
-    baseUrl:'https:/adorable-gentleness-production.up.railway.app',
+    baseUrl:'https://adorable-gentleness-production.up.railway.app',
     prepareHeaders: async (headers) => {
       try {
         const userInfo = Cookies.get('userInfo');
