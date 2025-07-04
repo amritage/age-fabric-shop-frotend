@@ -46,7 +46,7 @@ const ShopListItem = ({ product }) => {
       return '/assets/img/product/default-product-img.jpg';
     }
     try {
-      const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:7000';
+      const baseUrl = 'https://adorable-gentleness-production.up.railway.app';
       // If image is a stringified object, return default
       if (typeof image === 'string' && image.startsWith('[object Object]')) {
         return '/assets/img/product/default-product-img.jpg';
