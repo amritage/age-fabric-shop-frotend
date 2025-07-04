@@ -57,7 +57,7 @@ function getFixedImageUrl(url) {
   }
   // If it's a relative path starting with uploadimage, construct full URL
   if (url.startsWith('uploadimage/')) {
-    return `${process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:7000'}/${url}`;
+    return `${process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:7000'}/${url}`;   
   }
   // If it's just a filename, assume it's in uploadimage folder
   if (!url.includes('/')) {
