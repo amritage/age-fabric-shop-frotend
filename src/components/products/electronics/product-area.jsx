@@ -10,7 +10,7 @@ const tabs = ["new", "featured", "topSellers"];
 
 const ProductArea = () => {
   const [activeTab, setActiveTab] = useState("new");
-  const { data, isError, isLoading } = useGetProductsByTypeQuery({type:'electronics',query:`${activeTab}=true`});
+  const { data, isError, isLoading, refetch } = useGetProductsByTypeQuery({type:'electronics',query:`${activeTab}=true`});
   // handleActiveTab
   const handleActiveTab = (tab) => {
     setActiveTab(tab);
