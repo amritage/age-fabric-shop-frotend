@@ -35,7 +35,7 @@ const nextConfig = {
     // domains: ['localhost'],
   },
   env: {
-    NEXT_PUBLIC_API_BASE_URL: "https://adorable-gentleness-production.up.railway.app",
+    NEXT_PUBLIC_API_BASE_URL: "https://adorable-gentleness-production.up.railway.app/api",
   },
 };
 

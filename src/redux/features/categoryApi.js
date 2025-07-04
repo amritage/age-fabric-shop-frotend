@@ -11,7 +11,7 @@ export const categoryApi = apiSlice.injectEndpoints({
       }),
     }),
     getShowCategory: builder.query({
-      query: () => "/api/newcategory/viewcategory/"
+      query: () => "/api/newcategory/viewcategory"
     }),
     getProductTypeCategory: builder.query({
       query: (type) => `/api/category/show/${type}`
