@@ -8,13 +8,12 @@ import ShopContent from "./shop-content";
 import ShopHiddenSidebarArea from "./shop-hidden-sidebar-area";
 import {
   useGetAllNewProductsQuery,
-  useGetProductsByPriceValueQuery,
+  useGetPriceUptoQuery,
   useGetGsmUptoQuery,
   useGetOzUptoQuery,
   useGetQuantityUptoQuery,
-  useGetPurchasePriceUptoQuery,
-  useGetPriceUptoQuery
-} from "@/redux/features/newProductApi";
+  useGetPurchasePriceUptoQuery
+} from '@/redux/features/newProductApi';
 
 const ShopArea = ({ shop_right = false, hidden_sidebar = false }) => {
   const searchParams = useSearchParams();
