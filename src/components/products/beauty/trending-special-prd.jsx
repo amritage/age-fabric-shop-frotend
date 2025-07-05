@@ -88,7 +88,7 @@ const TrendingSpecialPrd = () => {
             <div className="col-xl-7 col-md-6">
               <div className="tp-special-wrapper grey-bg-9 pt-85 pb-35">
                 <div className="tp-section-title-wrapper-3 mb-40 text-center">
-                  <span className="tp-section-title-pre-3">Trending This Week's</span>
+                  <span className="tp-section-title-pre-3">Trending This Week&apos;s</span>
                   <h3 className="tp-section-title-3">Special products</h3>
                 </div>
                 <div className="tp-special-slider ">
