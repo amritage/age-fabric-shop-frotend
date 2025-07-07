@@ -113,16 +113,27 @@ const DetailsWrapper = ({ productItem }) => {
             <button 
               type="button" 
               onClick={() => handleWishlistProduct(productItem)} 
-              className={`tp-product-details-wishlist-btn tp-details-btn-hover ${isAddedToWishlist ? "active" : ""} hover:text-sky-500 focus:text-sky-500 active:text-sky-500 transition-colors`}
+              className={`tp-product-details-wishlist-btn tp-details-btn-hover ${isAddedToWishlist ? "active" : ""}`}
               aria-label="Add to Wishlist"
               style={{ 
                 backgroundColor: '#fff', 
                 border: '1px solid #E4E8EB',
-                borderRadius: '4px',
-                padding: '10px',
+                borderRadius: '50%',
+                padding: '8px',
                 lineHeight: 1,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: 24,
+                color: isAddedToWishlist ? 'red' : '#bbb',
+                transition: 'color 0.2s, background 0.2s',
+                boxShadow: isAddedToWishlist ? '0 0 8px rgba(255,0,0,0.15)' : 'none',
+                cursor: 'pointer'
               }}
+              onMouseOver={e => e.currentTarget.style.color = 'red'}
+              onMouseOut={e => e.currentTarget.style.color = isAddedToWishlist ? 'red' : '#bbb'}
             >
+              <i className={isAddedToWishlist ? 'fas fa-heart' : 'far fa-heart'}></i>
             </button>
           </div>
         </div>
