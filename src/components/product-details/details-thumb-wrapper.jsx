@@ -29,7 +29,14 @@ const DetailsThumbWrapper = ({
                   className={`nav-link ${isVideoActive ? "active" : ""}`}
                   onClick={() => setIsVideoActive(true)}
                   type="button"
-                  style={{ position: "relative", width: 80, height: 80, padding: 0, border: 'none', background: 'none' }}
+                  style={{
+                    position: "relative",
+                    width: 80,
+                    height: 80,
+                    padding: 0,
+                    border: 'none',
+                    background: 'none'
+                  }}
                 >
                   {/* Show the video thumbnail as an image */}
                   <Image
@@ -39,12 +46,12 @@ const DetailsThumbWrapper = ({
                     height={80}
                     style={{ width: 80, height: 80, objectFit: 'cover', borderRadius: 8 }}
                   />
-                  {/* Centered SVG play button overlay */}
+                  {/* Centered custom SVG play button overlay */}
                   <Image
-                    src={"/assets/img/icon/video-_1_.svg"}
+                    src={"/assets/img/icon/file.svg"}
                     alt="play button"
-                    width={32}
-                    height={32}
+                    width={28}
+                    height={28}
                     style={{
                       position: "absolute",
                       top: "50%",
