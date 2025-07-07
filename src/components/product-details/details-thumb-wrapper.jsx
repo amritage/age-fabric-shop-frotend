@@ -30,15 +30,34 @@ const DetailsThumbWrapper = ({
                   className={`nav-link ${isVideoActive ? "active" : ""}`}
                   onClick={() => setIsVideoActive(true)}
                   type="button"
+                  style={{ position: "relative", width: 80, height: 80, padding: 0, border: 'none', background: 'none' }}
                 >
                   <Image
                     src={item.img}
                     alt="video thumbnail"
                     width={80}
                     height={80}
-                    style={{ width: "100%", height: "100%", objectFit: 'cover' }}
+                    style={{ width: 80, height: 80, objectFit: 'cover', borderRadius: 8 }}
                   />
-                  <span className="video-play-icon">
+                  {/* Centered play button overlay */}
+                  <span
+                    style={{
+                      position: "absolute",
+                      top: "50%",
+                      left: "50%",
+                      transform: "translate(-50%, -50%)",
+                      color: "#fff",
+                      fontSize: 28,
+                      background: "rgba(0,0,0,0.5)",
+                      borderRadius: "50%",
+                      padding: 8,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      width: 36,
+                      height: 36,
+                    }}
+                  >
                     <i className="fas fa-play"></i>
                   </span>
                 </button>

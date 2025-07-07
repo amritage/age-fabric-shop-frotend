@@ -17,10 +17,10 @@ function mapBackendProductToFrontend(product) {
     product.image2 && { img: product.image2, type: "image" }
   ].filter(Boolean);
 
-  // Use the actual video thumbnail if available
+  // Use the common video thumbnail for all product videos
   if (product.video) {
     images.push({
-      img: product.videoThumbnail || "/assets/img/product/-video-thumb.png",
+      img: "/assets/img/icon/video.png",
       type: "video"
     });
   }
