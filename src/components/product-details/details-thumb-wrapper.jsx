@@ -44,7 +44,7 @@ const DetailsThumbWrapper = ({
                     alt="video thumbnail"
                     width={80}
                     height={80}
-                    style={{ width: 80, height: 80, objectFit: 'cover', borderRadius: 8 }}
+                    style={{ width: 80, height: 80, objectFit: 'contain', borderRadius: 8, background: '#F2F3F5' }}
                   />
                   <span
                     style={{
@@ -78,7 +78,7 @@ const DetailsThumbWrapper = ({
                     alt="image"
                     width={80}
                     height={80}
-                    style={{ width: "100%", height: "100%", objectFit: 'cover' }}
+                    style={{ width: "100%", height: "100%", objectFit: 'contain', background: '#F2F3F5' }}
                   />
                 </button>
               );
@@ -93,7 +93,7 @@ const DetailsThumbWrapper = ({
                   src={videoId}
                   controls
                   autoPlay
-                  style={{ width: imgWidth, height: imgHeight, background: "#000" }}
+                  style={{ width: imgWidth, height: imgHeight, objectFit: 'contain', background: '#F2F3F5' }}
                 />
               ) : (
                 <Image
@@ -101,6 +101,7 @@ const DetailsThumbWrapper = ({
                   alt="product img"
                   width={imgWidth}
                   height={imgHeight}
+                  style={{ objectFit: 'contain', background: '#F2F3F5' }}
                 />
               )}
               <div className="tp-product-badge">
