@@ -54,8 +54,8 @@ const DetailsThumbWrapper = ({
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      width: 36,
-                      height: 36,
+                      width: 24,
+                      height: 24,
                     }}
                   >
                     <i className="fas fa-play"></i>
