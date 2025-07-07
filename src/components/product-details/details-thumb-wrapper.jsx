@@ -1,6 +1,7 @@
 'use client';
 import Image from "next/image";
 import { useState } from "react";
+import { CgPlayButtonO } from "react-icons/cg";
 
 const DetailsThumbWrapper = ({
   imageURLs,
@@ -38,7 +39,6 @@ const DetailsThumbWrapper = ({
                     background: 'none'
                   }}
                 >
-                  {/* Show the video thumbnail as an image */}
                   <Image
                     src={item.img}
                     alt="video thumbnail"
@@ -46,7 +46,6 @@ const DetailsThumbWrapper = ({
                     height={80}
                     style={{ width: 80, height: 80, objectFit: 'cover', borderRadius: 8 }}
                   />
-                  {/* Centered small transparent play button */}
                   <span
                     style={{
                       position: "absolute",
@@ -56,14 +55,12 @@ const DetailsThumbWrapper = ({
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      width: 24,
-                      height: 24,
-                      pointerEvents: "none"
+                      pointerEvents: "none",
+                      fontSize: 36,
+                      color: "#fff"
                     }}
                   >
-                    <svg width="20" height="20" viewBox="0 0 20 20">
-                      <polygon points="7,5 16,10 7,15" fill="#fff" />
-                    </svg>
+                    <CgPlayButtonO />
                   </span>
                 </button>
               ) : (
