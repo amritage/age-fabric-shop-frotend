@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import { Rating } from 'react-simple-star-rating';
 import Link from 'next/link';
+import Image from 'next/image';
 // internal
 import { useGetTopRatedQuery } from '@/redux/features/newProductApi';
 import { ArrowRightLong, NextLongArr, PrevLongArr, TextShapeLine } from '@/svg';
@@ -67,7 +68,14 @@ const WeeksFeatured = () => {
         {product_items.map((item) => {
           return (
             <SwiperSlide key={item._id} className="tp-featured-item white-bg p-relative z-index-1">
-              <div className="tp-featured-thumb include-bg" style={{ backgroundImage: `url(${getImageUrl(item)})` }} data-background="assets/img/product/slider/product-slider-1.jpg"></div>
+              <div className="tp-featured-thumb" style={{ background: '#F2F3F5', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: '342px' }}>
+                <Image
+                  src={getImageUrl(item)}
+                  alt={item.title || 'product-img'}
+                  fill
+                  style={{ objectFit: 'contain', background: '#F2F3F5' }}
+                />
+              </div>
               <div className="tp-featured-content">
                 <h3 className="tp-featured-title">
                   <Link href={`/product-details/${item._id}`}>{item.title}</Link>
