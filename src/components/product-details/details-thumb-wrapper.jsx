@@ -23,39 +23,24 @@ const DetailsThumbWrapper = ({
         <nav>
           <div className="nav nav-tabs flex-sm-column">
             {imageURLs?.map((item, i) => {
-              // Log each thumbnail item
-              console.log('Thumbnail item:', item);
-
+              // Only use Next.js <Image /> for optimized images
               return item.type === "video" ? (
                 <button
                   key={i}
                   className={`nav-link ${isVideoActive ? "active" : ""}`}
-                  onClick={() => {
-                    console.log('Video thumbnail clicked!');
-                    setIsVideoActive(true);
-                  }}
+                  onClick={() => setIsVideoActive(true)}
                   type="button"
                 >
-                  <div style={{ position: "relative" }}>
-                    <Image
-                      src="/assets/img/product/-video-thumb.png"
-                      alt="video thumbnail"
-                      width={80}
-                      height={80}
-                      style={{ width: "100%", height: "100%", objectFit: 'cover' }}
-                    />
-                    <span style={{
-                      position: "absolute",
-                      top: "50%",
-                      left: "50%",
-                      transform: "translate(-50%, -50%)",
-                      color: "#fff",
-                      fontSize: 24,
-                      pointerEvents: "none"
-                    }}>
-                      <i className="fas fa-play"></i>
-                    </span>
-                  </div>
+                  <Image
+                    src={item.img}
+                    alt="video thumbnail"
+                    width={80}
+                    height={80}
+                    style={{ width: "100%", height: "100%", objectFit: 'cover' }}
+                  />
+                  <span className="video-play-icon">
+                    <i className="fas fa-play"></i>
+                  </span>
                 </button>
               ) : (
                 <button
