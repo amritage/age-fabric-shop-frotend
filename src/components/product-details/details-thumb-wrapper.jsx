@@ -46,6 +46,25 @@ const DetailsThumbWrapper = ({
                     height={80}
                     style={{ width: 80, height: 80, objectFit: 'cover', borderRadius: 8 }}
                   />
+                  {/* Centered small transparent play button */}
+                  <span
+                    style={{
+                      position: "absolute",
+                      top: "50%",
+                      left: "50%",
+                      transform: "translate(-50%, -50%)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      width: 24,
+                      height: 24,
+                      pointerEvents: "none"
+                    }}
+                  >
+                    <svg width="20" height="20" viewBox="0 0 20 20">
+                      <polygon points="7,5 16,10 7,15" fill="#fff" />
+                    </svg>
+                  </span>
                 </button>
               ) : (
                 <button

@@ -18,7 +18,7 @@ function mapBackendProductToFrontend(product) {
   ].filter(Boolean);
 
   // Use the common video thumbnail for all product videos
-  if (product.video) {
+  if (product.video && product.videoThumbnail) {
     images.push({
       img: product.videoThumbnail,
       type: "video"
