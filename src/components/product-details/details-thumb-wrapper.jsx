@@ -23,21 +23,35 @@ const DetailsThumbWrapper = ({
         <nav>
           <div className="nav nav-tabs flex-sm-column">
             {imageURLs?.map((item, i) => {
-              // Only use a small button for video, no thumbnail image
               return item.type === "video" ? (
                 <button
                   key={i}
                   className={`nav-link ${isVideoActive ? "active" : ""}`}
                   onClick={() => setIsVideoActive(true)}
                   type="button"
-                  style={{ position: "relative", width: 36, height: 36, padding: 0, border: 'none', background: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                  style={{ position: "relative", width: 80, height: 80, padding: 0, border: 'none', background: 'none' }}
                 >
+                  {/* Show the video thumbnail as an image */}
                   <Image
-                    src={"/assets/img/icon/video (1).png"}
-                    alt="video button"
+                    src={item.img}
+                    alt="video thumbnail"
+                    width={80}
+                    height={80}
+                    style={{ width: 80, height: 80, objectFit: 'cover', borderRadius: 8 }}
+                  />
+                  {/* Centered SVG play button overlay */}
+                  <Image
+                    src={"/assets/img/icon/video-_1_.svg"}
+                    alt="play button"
                     width={32}
                     height={32}
-                    style={{ width: 32, height: 32, objectFit: 'contain' }}
+                    style={{
+                      position: "absolute",
+                      top: "50%",
+                      left: "50%",
+                      transform: "translate(-50%, -50%)",
+                      pointerEvents: "none"
+                    }}
                   />
                 </button>
               ) : (
