@@ -60,7 +60,7 @@ const ProductItem = ({ product }) => {
               src={imageUrl}
               alt={product.name || "product image"}
               fill
-              style={{ objectFit: 'cover' }}
+              style={{ objectFit: 'contain', background: '#F2F3F5' }}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               onError={(e) => {
                 e.target.src = '/assets/img/product/default-product-img.jpg';

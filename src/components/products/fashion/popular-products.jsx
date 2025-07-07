@@ -119,7 +119,7 @@ const PopularProducts = () => {
                       src={imageUrl}
                       alt={item.name || "product-img"}
                       fill
-                      style={{ objectFit: 'cover' }}
+                      style={{ objectFit: 'contain', background: '#F2F3F5' }}
                       onError={(e) => {
                         e.target.src = '/assets/img/product/product-1.jpg';
                       }}
