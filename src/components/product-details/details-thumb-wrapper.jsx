@@ -55,8 +55,8 @@ const DetailsThumbWrapper = ({
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      width: 16,
-                      height: 16,
+                      width: 36,
+                      height: 36,
                       border: "1.5px solid #222",
                     }}
                   >
