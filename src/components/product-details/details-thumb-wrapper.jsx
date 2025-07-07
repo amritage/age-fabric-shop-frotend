@@ -1,7 +1,6 @@
 'use client';
 import Image from "next/image";
 import { useState } from "react";
-import { FaPlay } from 'react-icons/fa';
 
 const DetailsThumbWrapper = ({
   imageURLs,
@@ -31,16 +30,16 @@ const DetailsThumbWrapper = ({
                   className={`nav-link ${isVideoActive ? "active" : ""}`}
                   onClick={() => setIsVideoActive(true)}
                   type="button"
-                  style={{ position: "relative", width: 48, height: 48, padding: 0, border: 'none', background: 'none' }}
+                  style={{ position: "relative", width: 80, height: 80, padding: 0, border: 'none', background: 'none' }}
                 >
                   <Image
                     src={item.img}
                     alt="video thumbnail"
-                    width={48}
-                    height={48}
-                    style={{ width: 48, height: 48, objectFit: 'cover', borderRadius: 8 }}
+                    width={80}
+                    height={80}
+                    style={{ width: 80, height: 80, objectFit: 'cover', borderRadius: 8 }}
                   />
-                  {/* Smaller, less intrusive play button overlay */}
+                  {/* Centered play button overlay */}
                   <span
                     style={{
                       position: "absolute",
@@ -48,19 +47,18 @@ const DetailsThumbWrapper = ({
                       left: "50%",
                       transform: "translate(-50%, -50%)",
                       color: "#fff",
-                      fontSize: 10,
-                      background: "rgba(0,0,0,0.35)",
+                      fontSize: 28,
+                      background: "rgba(0,0,0,0.5)",
                       borderRadius: "50%",
-                      padding: 2,
+                      padding: 8,
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       width: 36,
                       height: 36,
-                      border: "1.5px solid #222",
                     }}
                   >
-                    <FaPlay />
+                    <i className="fas fa-play"></i>
                   </span>
                 </button>
               ) : (
