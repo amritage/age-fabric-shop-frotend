@@ -46,20 +46,6 @@ const DetailsThumbWrapper = ({
                     height={80}
                     style={{ width: 80, height: 80, objectFit: 'cover', borderRadius: 8 }}
                   />
-                  {/* Centered custom SVG play button overlay */}
-                  <Image
-                    src={"/assets/img/icon/file.svg"}
-                    alt="play button"
-                    width={28}
-                    height={28}
-                    style={{
-                      position: "absolute",
-                      top: "50%",
-                      left: "50%",
-                      transform: "translate(-50%, -50%)",
-                      pointerEvents: "none"
-                    }}
-                  />
                 </button>
               ) : (
                 <button
