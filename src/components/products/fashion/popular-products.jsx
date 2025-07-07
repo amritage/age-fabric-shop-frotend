@@ -112,19 +112,19 @@ const PopularProducts = () => {
               key={item._id}
               className="tp-category-item-2 p-relative z-index-1 text-center"
             >
-              <div className="tp-category-thumb-2 uniform-thumb">
+              <div className="tp-category-thumb-2" style={{ background: '#F2F3F5' }}>
                 <Link href={`/product-details/${item._id}`}>
-                  <Image
-                    src={imageUrl}
-                    alt={item.name || "product-img"}
-                    width={224}
-                    height={260}
-                    className="uniform-product-img"
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                    onError={(e) => {
-                      e.target.src = '/assets/img/product/product-1.jpg';
-                    }}
-                  />
+                  <div style={{ position: 'relative', width: '100%', height: '342px' }}>
+                    <Image
+                      src={imageUrl}
+                      alt={item.name || "product-img"}
+                      fill
+                      style={{ objectFit: 'cover' }}
+                      onError={(e) => {
+                        e.target.src = '/assets/img/product/product-1.jpg';
+                      }}
+                    />
+                  </div>
                 </Link>
               </div>
               <div className="tp-category-content-2">
