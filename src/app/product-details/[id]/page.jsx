@@ -20,7 +20,7 @@ function mapBackendProductToFrontend(product) {
   // Use the common video thumbnail for all product videos
   if (product.video) {
     images.push({
-      img: "/assets/img/icon/video.png",
+      img: product.videoThumbnail,
       type: "video"
     });
   }
