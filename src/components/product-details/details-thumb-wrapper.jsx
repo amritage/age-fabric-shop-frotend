@@ -23,43 +23,22 @@ const DetailsThumbWrapper = ({
         <nav>
           <div className="nav nav-tabs flex-sm-column">
             {imageURLs?.map((item, i) => {
-              // Only use Next.js <Image /> for optimized images
+              // Only use a small button for video, no thumbnail image
               return item.type === "video" ? (
                 <button
                   key={i}
                   className={`nav-link ${isVideoActive ? "active" : ""}`}
                   onClick={() => setIsVideoActive(true)}
                   type="button"
-                  style={{ position: "relative", width: 80, height: 80, padding: 0, border: 'none', background: 'none' }}
+                  style={{ position: "relative", width: 36, height: 36, padding: 0, border: 'none', background: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                 >
                   <Image
-                    src={item.img}
-                    alt="video thumbnail"
-                    width={80}
-                    height={80}
-                    style={{ width: 80, height: 80, objectFit: 'cover', borderRadius: 8 }}
+                    src={"/assets/img/icon/video (1).png"}
+                    alt="video button"
+                    width={32}
+                    height={32}
+                    style={{ width: 32, height: 32, objectFit: 'contain' }}
                   />
-                  {/* Centered play button overlay */}
-                  <span
-                    style={{
-                      position: "absolute",
-                      top: "50%",
-                      left: "50%",
-                      transform: "translate(-50%, -50%)",
-                      color: "#fff",
-                      fontSize: 28,
-                      background: "rgba(0,0,0,0.5)",
-                      borderRadius: "50%",
-                      padding: 8,
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      width: 36,
-                      height: 36,
-                    }}
-                  >
-                    <i className="fas fa-play"></i>
-                  </span>
                 </button>
               ) : (
                 <button
