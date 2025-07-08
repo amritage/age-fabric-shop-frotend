@@ -38,7 +38,7 @@ export const authApi = apiSlice.injectEndpoints({
               user: result.data.data.user,
             })
           );
-        } catch (err) {
+        } catch {
           // do nothing
         }
       },
@@ -70,7 +70,7 @@ export const authApi = apiSlice.injectEndpoints({
               user: result.data.data.user,
             })
           );
-        } catch (err) {
+        } catch {
           // do nothing
         }
       },
@@ -87,7 +87,7 @@ export const authApi = apiSlice.injectEndpoints({
               user: result.data,
             })
           );
-        } catch (err) {
+        } catch {
           // do nothing
         }
       },
@@ -115,7 +115,7 @@ export const authApi = apiSlice.injectEndpoints({
               user: result.data.data.user,
             })
           );
-        } catch (err) {
+        } catch {
           // do nothing
         }
       },
@@ -171,7 +171,7 @@ export const authApi = apiSlice.injectEndpoints({
               user: result.data.data.user,
             })
           );
-        } catch (err) {
+        } catch {
           // do nothing
         }
       },

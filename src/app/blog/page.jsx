@@ -1,12 +1,13 @@
-import Wrapper from "@/layout/wrapper";
-import HeaderTwo from "@/layout/headers/header-2";
+'use client';
+
+import dynamic from 'next/dynamic';
 import BlogBreadcrumb from "@/components/breadcrumb/blog-breadcrumb";
-import BlogPostboxArea from "@/components/blog/blog-postox/blog-postbox-area";
 import Footer from "@/layout/footers/footer";
 
-export const metadata = {
-  title: "Shofy - Blog Page",
-};
+// Dynamically import Wrapper, HeaderTwo, and BlogPostboxArea with SSR disabled
+const Wrapper = dynamic(() => import('@/layout/wrapper'), { ssr: false });
+const HeaderTwo = dynamic(() => import('@/layout/headers/header-2'), { ssr: false });
+const BlogPostboxArea = dynamic(() => import('@/components/blog/blog-postox/blog-postbox-area'), { ssr: false });
 
 export default function BlogPage() {
   return (

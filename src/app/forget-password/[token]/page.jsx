@@ -1,8 +1,6 @@
-import ForgotPasswordArea from "@/components/fortgot-password/forgot-password-area";
+'use client';
 
-export const metadata = {
-  title: "Shofy - Forget Password Page",
-};
+import ForgotPasswordArea from "@/components/fortgot-password/forgot-password-area";
 
 export default function ForgetPasswordPage({ params }) {
   return (

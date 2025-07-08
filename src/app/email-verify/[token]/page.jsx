@@ -1,8 +1,6 @@
-import EmailVerifyArea from "@/components/email-verify/email-verify-area";
+'use client';
 
-export const metadata = {
-  title: "Shofy - Email Verify Page",
-};
+import EmailVerifyArea from "@/components/email-verify/email-verify-area";
 
 export default function EmailVerifyPage({ params }) {
   return (

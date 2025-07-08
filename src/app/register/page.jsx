@@ -1,12 +1,13 @@
-import Wrapper from "@/layout/wrapper";
-import HeaderTwo from "@/layout/headers/header-2";
+'use client';
+
+import dynamic from 'next/dynamic';
 import Footer from "@/layout/footers/footer";
 import CommonBreadcrumb from "@/components/breadcrumb/common-breadcrumb";
-import RegisterArea from "@/components/login-register/register-area";
 
-export const metadata = {
-  title: "Shofy - Register Page",
-};
+// Dynamically import Wrapper, HeaderTwo, and RegisterArea with SSR disabled
+const Wrapper = dynamic(() => import('@/layout/wrapper'), { ssr: false });
+const HeaderTwo = dynamic(() => import('@/layout/headers/header-2'), { ssr: false });
+const RegisterArea = dynamic(() => import('@/components/login-register/register-area'), { ssr: false });
 
 export default function RegisterPage() {
   return (

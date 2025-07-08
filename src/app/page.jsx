@@ -1,5 +1,6 @@
-import Wrapper from "@/layout/wrapper";
-import Header from "@/layout/headers/header";
+'use client';
+
+import dynamic from 'next/dynamic';
 import HomeHeroSlider from "@/components/hero-banner/home-hero-slider";
 import BannerArea from "@/components/banner/banner-area";
 import BlogArea from "@/components/blog/electronic/blog-area";
@@ -17,6 +18,8 @@ import Footer from "@/layout/footers/footer";
 
 
 export default function HomePage() {
+  const Wrapper = dynamic(() => import('@/layout/wrapper'), { ssr: false });
+  const Header = dynamic(() => import('@/layout/headers/header'), { ssr: false });
   return (
     <Wrapper>
       <Header/>

@@ -1,11 +1,12 @@
-import Wrapper from "@/layout/wrapper";
-import HeaderTwo from "@/layout/headers/header-2";
-import Footer from "@/layout/footers/footer";
-import ProfileArea from "@/components/my-account/profile-area";
+'use client';
 
-export const metadata = {
-  title: "Shofy - Profile Page",
-};
+import dynamic from 'next/dynamic';
+import Footer from "@/layout/footers/footer";
+
+// Dynamically import Wrapper, HeaderTwo, and ProfileArea with SSR disabled
+const Wrapper = dynamic(() => import('@/layout/wrapper'), { ssr: false });
+const HeaderTwo = dynamic(() => import('@/layout/headers/header-2'), { ssr: false });
+const ProfileArea = dynamic(() => import('@/components/my-account/profile-area'), { ssr: false });
 
 export default function ProfilePage() {
   return (

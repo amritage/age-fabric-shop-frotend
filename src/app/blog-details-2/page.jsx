@@ -1,15 +1,14 @@
-import Wrapper from "@/layout/wrapper";
-import HeaderTwo from "@/layout/headers/header-2";
+'use client';
+
+import dynamic from 'next/dynamic';
 import blogData from "@/data/blog-data";
 import BlogDetailsAreaTwo from "@/components/blog-details/blog-details-area-2";
 import Footer from "@/layout/footers/footer";
 
-
-export const metadata = {
-  title: "Shofy - Blog Details 2 Page",
-};
-
 export default function BlogDetailsPageTwo() {
+  const Wrapper = dynamic(() => import('@/layout/wrapper'), { ssr: false });
+  const HeaderTwo = dynamic(() => import('@/layout/headers/header-2'), { ssr: false });
+
   return (
     <Wrapper>
       <HeaderTwo style_2={true} />

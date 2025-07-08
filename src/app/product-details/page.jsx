@@ -1,11 +1,12 @@
-import Wrapper from "@/layout/wrapper";
-import HeaderTwo from "@/layout/headers/header-2";
-import ProductDetailsArea from "@/components/product-details/product-details-area";
+'use client';
+
+import dynamic from 'next/dynamic';
 import Footer from "@/layout/footers/footer";
 
-export const metadata = {
-  title: "Shofy - Product Details Page",
-};
+// Dynamically import Wrapper, HeaderTwo, and ProductDetailsArea with SSR disabled
+const Wrapper = dynamic(() => import('@/layout/wrapper'), { ssr: false });
+const HeaderTwo = dynamic(() => import('@/layout/headers/header-2'), { ssr: false });
+const ProductDetailsArea = dynamic(() => import('@/components/product-details/product-details-area'), { ssr: false });
 
 export default function ProductDetailsPage() {
   return (

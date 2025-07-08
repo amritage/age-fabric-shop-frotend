@@ -1,12 +1,13 @@
-import Wrapper from "@/layout/wrapper";
-import HeaderTwo from "@/layout/headers/header-2";
+'use client';
+
+import dynamic from 'next/dynamic';
 import Footer from "@/layout/footers/footer";
 import ShopBreadcrumb from "@/components/breadcrumb/shop-breadcrumb";
-import ShopCategoryArea from "@/components/categories/shop-category-area";
 
-export const metadata = {
-  title: "Shofy - Category Page",
-};
+// Dynamically import Wrapper, HeaderTwo, and ShopCategoryArea with SSR disabled
+const Wrapper = dynamic(() => import('@/layout/wrapper'), { ssr: false });
+const HeaderTwo = dynamic(() => import('@/layout/headers/header-2'), { ssr: false });
+const ShopCategoryArea = dynamic(() => import('@/components/categories/shop-category-area'), { ssr: false });
 
 export default function CategoryPage() {
   return (

@@ -77,7 +77,10 @@ export const cartSlice = createSlice({
       state.orderQuantity = 1;
     },
     clearCart:(state) => {
-      const isClearCart = window.confirm('Are you sure you want to remove all items ?');
+      let isClearCart = true;
+      if (typeof window !== 'undefined') {
+        isClearCart = window.confirm('Are you sure you want to remove all items ?');
+      }
       if(isClearCart){
         state.cart_products = []
       }

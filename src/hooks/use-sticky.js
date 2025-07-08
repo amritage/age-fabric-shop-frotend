@@ -5,7 +5,7 @@ const useSticky = () => {
     const [sticky,setSticky] = useState(false);
 
     const stickyHeader = () => {
-        if(window.scrollY > 80){
+        if (typeof window !== 'undefined' && window.scrollY > 80) {
             setSticky(true)
         }
         else{
@@ -13,7 +13,9 @@ const useSticky = () => {
         }
     }
     useEffect(() => {
-        window.addEventListener('scroll',stickyHeader)
+        if (typeof window !== 'undefined') {
+            window.addEventListener('scroll',stickyHeader)
+        }
     },[]);
 
     return {

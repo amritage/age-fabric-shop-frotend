@@ -1,5 +1,6 @@
-import Wrapper from "@/layout/wrapper";
-import HeaderFour from '@/layout/headers/header-4';
+'use client';
+
+import dynamic from 'next/dynamic';
 import JewelryBanner from '@/components/banner/jewelry-banner';
 import JewelryShopBanner from '@/components/shop-banner/jewelry-shop-banner';
 import JewelryAbout from '@/components/about/jewelry-about';
@@ -12,10 +13,8 @@ import InstagramAreaFour from '@/components/instagram/instagram-area-4';
 import FeatureAreaThree from '@/components/features/feature-area-3';
 import FooterTwo from '@/layout/footers/footer-2';
 
-
-export const metadata = {
-  title: "Shofy - Home Four",
-};
+const Wrapper = dynamic(() => import('@/layout/wrapper'), { ssr: false });
+const HeaderFour = dynamic(() => import('@/layout/headers/header-4'), { ssr: false });
 
 export default function HomePageFour() {
   return (

@@ -61,14 +61,16 @@ const JewelryBanner = () => {
   const [play, setPlay] = useState(false);
 
   const handleToggle = () => {
-    if (play === false) {
-      setPlay(true);
-      const videos = document.querySelectorAll('.tp-slider-video video');
-      videos.forEach((video) => video.play());
-    } else {
-      setPlay(false);
-      const videos = document.querySelectorAll('.tp-slider-video video');
-      videos.forEach((video) => video.pause());
+    if (typeof document !== 'undefined') {
+      if (play === false) {
+        setPlay(true);
+        const videos = document.querySelectorAll('.tp-slider-video video');
+        videos.forEach((video) => video.play());
+      } else {
+        setPlay(false);
+        const videos = document.querySelectorAll('.tp-slider-video video');
+        videos.forEach((video) => video.pause());
+      }
     }
   };
   return (

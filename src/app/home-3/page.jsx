@@ -1,36 +1,20 @@
-import Wrapper from "@/layout/wrapper";
-import HeaderThree from "@/layout/headers/header-3";
-import BeautyBanner from "@/components/banner/beauty-banner";
-import BeautyCategory from "@/components/categories/beauty-category";
-import BeautyFeatured from "@/components/features/beauty-featured";
-import ProductArea from "@/components/products/beauty/product-area";
-import BeautyOfferBanner from "@/components/offer-banner/beauty-offer-banner";
-import ProductAreaTwo from "@/components/products/beauty/product-area-2";
-import TrendingSpecialPrd from "@/components/products/beauty/trending-special-prd";
-import BeautyTestimonial from "@/components/testimonial/beauty-testimonial";
-import FeatureAreaTwo from "@/components/features/feature-area-2";
-import InstagramAreaThree from "@/components/instagram/instagram-area-3";
+'use client';
+
+import dynamic from 'next/dynamic';
 import Footer from "@/layout/footers/footer";
+import BeautyPrdLoader from "@/components/loader/home-3/beauty-prd-loader";
 
-export const metadata = {
-  title: "Shofy - Home Three",
-};
+// Dynamically import Wrapper and HeaderTwo with SSR disabled
+const Wrapper = dynamic(() => import('@/layout/wrapper'), { ssr: false });
+const HeaderTwo = dynamic(() => import('@/layout/headers/header-2'), { ssr: false });
 
-export default function HomePageThree() {
+// Remove dynamic import and use BeautyPrdLoader directly
+export default function Home3Page() {
   return (
     <Wrapper>
-      <HeaderThree />
-      <BeautyBanner />
-      <BeautyCategory />
-      <BeautyFeatured />
-      <ProductArea />
-      <BeautyOfferBanner />
-      <ProductAreaTwo />
-      <TrendingSpecialPrd />
-      <BeautyTestimonial />
-      <FeatureAreaTwo />
-      <InstagramAreaThree />
-      <Footer style_3={true} />
+      <HeaderTwo style_2={true} />
+      <BeautyPrdLoader />
+      <Footer primary_style={true} />
     </Wrapper>
   );
 }

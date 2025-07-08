@@ -1,13 +1,13 @@
-import Wrapper from "@/layout/wrapper";
-import HeaderTwo from "@/layout/headers/header-2";
+'use client';
+
+import dynamic from 'next/dynamic';
 import CommonBreadcrumb from "@/components/breadcrumb/common-breadcrumb";
-import SearchArea from "@/components/search/search-area";
 import Footer from "@/layout/footers/footer";
 
-
-export const metadata = {
-  title: "Shofy - Search Page",
-};
+// Dynamically import Wrapper, HeaderTwo, and SearchArea with SSR disabled
+const Wrapper = dynamic(() => import('@/layout/wrapper'), { ssr: false });
+const HeaderTwo = dynamic(() => import('@/layout/headers/header-2'), { ssr: false });
+const SearchArea = dynamic(() => import('@/components/search/search-area'), { ssr: false });
 
 export default function SearchPage() {
   return (

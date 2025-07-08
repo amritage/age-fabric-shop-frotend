@@ -3,6 +3,9 @@
 import './globals.scss';
 import { Jost } from 'next/font/google';
 import Providers from '../components/provider';
+import 'slick-carousel/slick/slick.css';
+import 'swiper/css/bundle';
+import 'react-modal-video/scss/modal-video.scss';
 
 export const metadata = {
   title: 'Shofy - e-Commerce Next js Template',

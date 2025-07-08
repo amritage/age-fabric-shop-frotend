@@ -16,7 +16,7 @@ export const authApi = apiSlice.injectEndpoints({
         try {
           const result = await queryFulfilled;
           dispatch(set_client_secret(result.clientSecret));
-        } catch (err) {
+        } catch {
           // do nothing
         }
       },
@@ -38,7 +38,7 @@ export const authApi = apiSlice.injectEndpoints({
             localStorage.removeItem("cart_products");
             localStorage.removeItem("shipping_info");
           }
-        } catch (err) {
+        } catch {
           // do nothing
         }
       },

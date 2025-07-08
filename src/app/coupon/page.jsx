@@ -1,12 +1,12 @@
-import Wrapper from "@/layout/wrapper";
-import HeaderTwo from '@/layout/headers/header-2';
+'use client';
+
+import dynamic from 'next/dynamic';
 import CommonBreadcrumb from '@/components/breadcrumb/common-breadcrumb';
 import CouponArea from '@/components/coupon/coupon-area';
 import Footer from '@/layout/footers/footer';
 
-export const metadata = {
-  title: "Shofy - Coupon Page",
-};
+const Wrapper = dynamic(() => import('@/layout/wrapper'), { ssr: false });
+const HeaderTwo = dynamic(() => import('@/layout/headers/header-2'), { ssr: false });
 
 export default function CouponPage() {
   return (
